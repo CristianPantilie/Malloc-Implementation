@@ -167,28 +167,6 @@ void *myalloc(size_t n)
 	}
 }
 
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
 void myfree(void *ptr)
 {
 	if(ptr)
@@ -206,22 +184,6 @@ void myfree(void *ptr)
 		}
 	}
 }
-
-/*
-Very often, in many C programs, the malloc-ed size is much smaller than a page, 
-so you have to keep several memory chunks in one (or several consecutive) pages. 
-For instance when you are strdup-ing some name or human language word, 
-the typical size is one or a few dozen bytes, but the typical page size is 4Kbytes! 
-You also have to accept large malloc requests and handle them specially.
-*/
-
-/*
-return suitable aligned memory, the memory here seems to be 4 byte aligned 
-(as you add an int, presumably 4 bytes, to the page aligned data from mmap. 
-This means storing values that need larger alignment in the returned memory, 
-e.g. a double incurs a performance penalty, or outright crashes on some architectures.
-*/
-
 
 
 int main()
